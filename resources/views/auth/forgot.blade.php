@@ -7,9 +7,23 @@
     </div>
     <div class="card-body">
       <p class="login-box-msg">Nhập email để yêu cầu mật khẩu mới.</p>
-      <form action="recover-password.html" method="post">
+      @if ($message = Session::get('error'))
+      <div class="alert alert-danger">
+        <ul>
+            <li>{{$message}}</li>
+        </ul>
+      </div>
+    @elseif ($message = Session::get('success'))
+    <div class="alert alert-success">
+      <ul>
+          <li>{{$message}}</li>
+      </ul>
+    </div>
+    @endif
+      <form action="" method="post">
+        @csrf
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control" placeholder="Email" name="email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -24,7 +38,7 @@
         </div>
       </form>
       <p class="mt-3 mb-1">
-        <a href="/login">Đăng nhập</a>
+        <a href="/">Đăng nhập</a>
       </p>
     </div>
     <!-- /.login-card-body -->

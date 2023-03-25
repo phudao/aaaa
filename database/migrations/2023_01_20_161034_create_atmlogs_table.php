@@ -20,8 +20,12 @@ class CreateAtmlogsTable extends Migration
             $table->unsignedInteger('shift');
             $table->unsignedInteger('manager_id');
             $table->unsignedInteger('leader_id');
-            //$table->string('staff_ids', 20);
+            $table->string('staff_ids', 100);
             $table->string('staff_names',100);
+            //acc
+            $table->string('acc_devices');
+            $table->string('acc_cwps_test');
+
             $table->tinyInteger('rf12_mst');
             $table->string('nb', 10);
             $table->string('cm');
@@ -79,8 +83,8 @@ class CreateAtmlogsTable extends Migration
             $table->string('das_webserver');
             $table->string('das_oracledb');
             
-            $table->string('lab_servers', 100)->nullable();//ca sang
-            $table->string('lab_cpws', 100)->nullable();//ca sang
+            $table->string('lab_servers', 1000)->nullable();//ca sang
+            $table->string('lab_cpws', 1000)->nullable();//ca sang
             $table->string('recochetA_services')->nullable();//ca sang
             $table->string('recochetB_services')->nullable();//ca sang
             $table->integer('recochetA_hd_free')->nullable();//ca sang
@@ -92,17 +96,18 @@ class CreateAtmlogsTable extends Migration
             $table->string('plbvoice_working')->nullable();//friday
             $table->string('magneticdisc_cleanup')->nullable();//friday
             $table->string('compare_config_files')->nullable();//friday
-            $table->string('usb_rpb_used')->nullable();//friday
+            //$table->string('usb_rpb_used')->nullable();//friday
             $table->string('usb_rpb_cleanup')->nullable();//friday
             $table->string('backedup_dat')->nullable();//friday
             $table->string('dbh_cluster_offline')->nullable();//tuesday
             $table->string('hn3')->nullable();//tuesday
-            $table->float('nb_error', 5, 2)->nullable();//1st
-            $table->float('st_error', 5, 2)->nullable();//1st
-            $table->float('vi_error', 5, 2)->nullable();//1st
-            $table->float('rg_error', 5, 2)->nullable();//1st
+            $table->float('nb_error', 7, 5)->nullable();//1st
+            $table->float('st_error', 7, 5)->nullable();//1st
+            $table->float('vi_error', 7, 5)->nullable();//1st
+            $table->float('rg_error', 7, 5)->nullable();//1st
 
-            $table->string('note', 1000)->nullable();            
+            $table->string('note', 1000)->nullable();          
+            //$table->string('trace', 65535)->nullable();
             $table->timestamps();
         });
     }

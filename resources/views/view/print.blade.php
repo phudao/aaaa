@@ -875,7 +875,7 @@
               <option>OFF</option>
           </select></td>
         </tr>
-        <tr style="border-bottom: 0px;">
+        <tr style="border-bottom: 1px; border-collapse:collapse;">
           <td>&nbsp;</td>
           <td>Trạng thái của Oracle DAS (ON/OFF)</td>
           <td>&nbsp;<select name="select60" id="select110" style="border:none;-webkit-appearance: none;">

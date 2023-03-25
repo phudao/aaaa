@@ -12,7 +12,13 @@
         <a href="/addlog" class="nav-link">Ghi Nhật Kí</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/logout" class="nav-link">Logout</a>
+        <a href="/users" class="nav-link">Người dùng</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/report_weekly" class="nav-link">Báo cáo</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/logout" class="nav-link"><b>{{ Auth::user()->name }}<sup style="color:red">&nbsp;Logout</sup></b></a>
       </li>
     </ul>
 

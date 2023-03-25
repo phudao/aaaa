@@ -712,7 +712,7 @@ A HORIZONTAL event
   }
 .fc .fc-daygrid-day.fc-day-today {
       background-color: rgba(255, 220, 40, 0.15);
-      background-color: var(--fc-today-bg-color, rgba(255, 220, 40, 0.15));
+      background-color: var(--fc-today-bg-color, #ffcc00);
     }
 .fc .fc-daygrid-day-frame {
     position: relative;

@@ -17,22 +17,21 @@
                     <tr>
                       <th style="width: 10px">#</th>
                       <th>Tên người dùng</th>
-                      <th>Email</th>
-                      <th>Vị Trí</th>
-                      <th>Role</th>
-                      <th>#</th>
+                      <th class="d-none d-sm-inline-block">Email</th>
+                      <th>Active</th>
+                      <th class="d-none d-sm-inline-block">Role</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
                   @foreach ($users as $user)
                     <tr>
                     <td></td>
-                    <td><span class="badge badge-secondary badge-success">{{ $user->name }}</span></td>
-                    <td><span class="badge badge-warning">{{ $user->email }}</span></td>
-                    <td><span class="badge badge-danger"> </span></td>
-                    <td><span class="badge badge-info"> </td>
-                    <td width="10%"><button type="button" class="btn btn-sm btn-block btn-primary">Change Pass</button>
-                    <td width="5%"><button type="button" class="btn btn-sm btn-block btn-primary">Sửa</button>
+                    <td><span class="badge badge-primary">{{ $user->name }}</span></td>
+                    <td class="d-none d-sm-inline-block"><span class="badge badge-warning">{{ $user->email }}</span></td>
+                    <td>@if($user->active == 1)<span class="badge badge-success">Đã kích hoạt</span> @else <span class="badge badge-dark"> Inactive</span> @endif</span></td>
+                    <td class="d-none d-sm-inline-block"><span class="badge badge-info"> </td>
+                    <td></td>
                     </tr>
                     @endforeach
                     <tr><td colspan="8"><div>{!! $users->links() !!}</div></td></tr>
